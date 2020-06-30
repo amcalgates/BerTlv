@@ -4,7 +4,7 @@
 //
 
 #import "BerTag.h"
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 
 
 @implementation BerTag {
@@ -98,17 +98,17 @@
     } else {
         [description appendFormat:@"- "];
     }
-    [description appendFormat:@"%@", [HexUtil format:data]];
+    [description appendFormat:@"%@", [BerHexUtil format:data]];
     return [description copy];
 }
 
 + (BerTag *)parse:(NSString *)aHexString {
-    NSData *data = [HexUtil parse:aHexString error:nil];
+    NSData *data = [BerHexUtil parse:aHexString error:nil];
     return [[BerTag alloc] init:data offset:0 length:(uint)data.length];
 }
 
 - (NSString *)hex {
-    return [HexUtil format:data];
+    return [BerHexUtil format:data];
 }
 
 @end

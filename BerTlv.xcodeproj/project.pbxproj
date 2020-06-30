@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		016C356E21FF4FEE003D5899 /* BerTlv.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4BEB55198ED6C500707046 /* BerTlv.m */; };
 		016C356F21FF4FEE003D5899 /* BerTag.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6369EFD6776A1A19AFF0 /* BerTag.m */; };
-		016C357021FF4FEE003D5899 /* HexUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF61934AA6EBE642C057E7 /* HexUtil.m */; };
 		016C357121FF4FEE003D5899 /* BerTlvParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6A9F83C1B8506761EA08 /* BerTlvParser.m */; };
 		016C357221FF4FEE003D5899 /* BerTlvs.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF68E68CD9D09E69ED85E8 /* BerTlvs.m */; };
 		016C357321FF4FEE003D5899 /* BerTlvBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6CCDBA6480154AAA66AF /* BerTlvBuilder.m */; };
@@ -20,8 +19,9 @@
 		016C357A21FF4FEE003D5899 /* BerTlvs.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DF63B1FB5A3356C6A8BC63 /* BerTlvs.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		016C357B21FF4FEE003D5899 /* BerTlv.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4BEB53198ED6C500707046 /* BerTlv.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		016C357C21FF4FEE003D5899 /* BerTlvUmbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ADE44A71CE9F322006BEC34 /* BerTlvUmbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		016C357D21FF4FEE003D5899 /* HexUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DF64825EB0782AD3F2A243 /* HexUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		016C357E21FF4FEE003D5899 /* BerTlvBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DF630FA0DFAAEE5267F33E /* BerTlvBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		49B5358E24ABF6E60041AD71 /* BerHexUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B5358C24ABF6E60041AD71 /* BerHexUtil.h */; };
+		49B5358F24ABF6E60041AD71 /* BerHexUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B5358D24ABF6E60041AD71 /* BerHexUtil.m */; };
 		4BE6176E1F56BE9700F9CBD4 /* BerTlvErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BE6176C1F56BE9700F9CBD4 /* BerTlvErrors.h */; };
 		4BE6176F1F56BE9700F9CBD4 /* BerTlvErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6176D1F56BE9700F9CBD4 /* BerTlvErrors.m */; };
 		4BE617701F56BF1D00F9CBD4 /* BerTlvErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BE6176D1F56BE9700F9CBD4 /* BerTlvErrors.m */; };
@@ -43,20 +43,17 @@
 		8A858F541CE6156E00A3779C /* BerTlvBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DF630FA0DFAAEE5267F33E /* BerTlvBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8A858F551CE6159100A3779C /* BerTlv.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A4BEB55198ED6C500707046 /* BerTlv.m */; };
 		8A858F561CE6159100A3779C /* BerTag.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6369EFD6776A1A19AFF0 /* BerTag.m */; };
-		8A858F571CE6159100A3779C /* HexUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF61934AA6EBE642C057E7 /* HexUtil.m */; };
 		8A858F581CE6159100A3779C /* BerTlvParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6A9F83C1B8506761EA08 /* BerTlvParser.m */; };
 		8A858F591CE6159100A3779C /* BerTlvs.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF68E68CD9D09E69ED85E8 /* BerTlvs.m */; };
 		8A858F5A1CE6159100A3779C /* BerTlvBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6CCDBA6480154AAA66AF /* BerTlvBuilder.m */; };
 		8ADE44A41CE9F0F2006BEC34 /* BerTlv.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4BEB53198ED6C500707046 /* BerTlv.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8ADE44A81CE9F322006BEC34 /* BerTlvUmbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ADE44A71CE9F322006BEC34 /* BerTlvUmbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8ADE44A91CE9F3E3006BEC34 /* HexUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = B2DF64825EB0782AD3F2A243 /* HexUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B2DF61176FCB84C2ED25ADD5 /* BerTlvParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6A9F83C1B8506761EA08 /* BerTlvParser.m */; };
 		B2DF6396CCD74FFB97269FE7 /* BerTlvBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6DFB3D566DBD8B474A49 /* BerTlvBuilderTests.m */; };
 		B2DF65088487594DBEFC7545 /* BerTag.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6369EFD6776A1A19AFF0 /* BerTag.m */; };
 		B2DF65529F987575E4CEFAC5 /* BerTlvsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6D4ED74F7E2C04459B89 /* BerTlvsTests.m */; };
 		B2DF65C52F004A588C3D3492 /* BerTlvs.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF68E68CD9D09E69ED85E8 /* BerTlvs.m */; };
 		B2DF65E3590F35608BF654D3 /* BerTlvParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF60961F8D8EF9A49F457B /* BerTlvParserTests.m */; };
-		B2DF67B7A348986968C70C79 /* HexUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF61934AA6EBE642C057E7 /* HexUtil.m */; };
 		B2DF6803205BF73D8A354DD6 /* BerTagTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6B4302283947CFB9657E /* BerTagTests.m */; };
 		B2DF6C7F3CEE5CD4444340EC /* HexUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6D0B3FF2D0942CAFCF96 /* HexUtilTests.m */; };
 		B2DF6CF3341C45AA3C342B70 /* BerTlvBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = B2DF6CCDBA6480154AAA66AF /* BerTlvBuilder.m */; };
@@ -95,6 +92,8 @@
 /* Begin PBXFileReference section */
 		016C358321FF4FEE003D5899 /* BerTlv.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BerTlv.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		016C358421FF4FEE003D5899 /* BerTlv-macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BerTlv-macOS-Info.plist"; path = "/Users/armansharvel/Developer/Frameworks/BerTlv/BerTlv-macOS-Info.plist"; sourceTree = "<absolute>"; };
+		49B5358C24ABF6E60041AD71 /* BerHexUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BerHexUtil.h; sourceTree = "<group>"; };
+		49B5358D24ABF6E60041AD71 /* BerHexUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BerHexUtil.m; sourceTree = "<group>"; };
 		4B9E63381E82B31E0051EA01 /* BerTlv.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = BerTlv.modulemap; sourceTree = "<group>"; };
 		4BE6176C1F56BE9700F9CBD4 /* BerTlvErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BerTlvErrors.h; sourceTree = "<group>"; };
 		4BE6176D1F56BE9700F9CBD4 /* BerTlvErrors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BerTlvErrors.m; sourceTree = "<group>"; };
@@ -117,11 +116,9 @@
 		8A858F491CE6154600A3779C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ADE44A71CE9F322006BEC34 /* BerTlvUmbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BerTlvUmbrella.h; sourceTree = "<group>"; };
 		B2DF60961F8D8EF9A49F457B /* BerTlvParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BerTlvParserTests.m; sourceTree = "<group>"; };
-		B2DF61934AA6EBE642C057E7 /* HexUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HexUtil.m; sourceTree = "<group>"; };
 		B2DF630FA0DFAAEE5267F33E /* BerTlvBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BerTlvBuilder.h; sourceTree = "<group>"; };
 		B2DF6369EFD6776A1A19AFF0 /* BerTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BerTag.m; sourceTree = "<group>"; };
 		B2DF63B1FB5A3356C6A8BC63 /* BerTlvs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BerTlvs.h; sourceTree = "<group>"; };
-		B2DF64825EB0782AD3F2A243 /* HexUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HexUtil.h; sourceTree = "<group>"; };
 		B2DF654B440CC8DF0090421E /* BerTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BerTag.h; sourceTree = "<group>"; };
 		B2DF6712285D06D8BEFA7599 /* BerTlvParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BerTlvParser.h; sourceTree = "<group>"; };
 		B2DF68E68CD9D09E69ED85E8 /* BerTlvs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BerTlvs.m; sourceTree = "<group>"; };
@@ -215,14 +212,14 @@
 		8A4BEB50198ED6C500707046 /* BerTlv */ = {
 			isa = PBXGroup;
 			children = (
+				49B5358C24ABF6E60041AD71 /* BerHexUtil.h */,
+				49B5358D24ABF6E60041AD71 /* BerHexUtil.m */,
 				8ADE44A71CE9F322006BEC34 /* BerTlvUmbrella.h */,
 				8A4BEB53198ED6C500707046 /* BerTlv.h */,
 				8A4BEB55198ED6C500707046 /* BerTlv.m */,
 				8A4BEB51198ED6C500707046 /* Supporting Files */,
 				B2DF6369EFD6776A1A19AFF0 /* BerTag.m */,
 				B2DF654B440CC8DF0090421E /* BerTag.h */,
-				B2DF61934AA6EBE642C057E7 /* HexUtil.m */,
-				B2DF64825EB0782AD3F2A243 /* HexUtil.h */,
 				B2DF6A9F83C1B8506761EA08 /* BerTlvParser.m */,
 				B2DF6712285D06D8BEFA7599 /* BerTlvParser.h */,
 				B2DF68E68CD9D09E69ED85E8 /* BerTlvs.m */,
@@ -299,7 +296,6 @@
 				016C357A21FF4FEE003D5899 /* BerTlvs.h in Headers */,
 				016C357B21FF4FEE003D5899 /* BerTlv.h in Headers */,
 				016C357C21FF4FEE003D5899 /* BerTlvUmbrella.h in Headers */,
-				016C357D21FF4FEE003D5899 /* HexUtil.h in Headers */,
 				016C357E21FF4FEE003D5899 /* BerTlvBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,7 +310,7 @@
 				8A858F531CE6156E00A3779C /* BerTlvs.h in Headers */,
 				8ADE44A41CE9F0F2006BEC34 /* BerTlv.h in Headers */,
 				8ADE44A81CE9F322006BEC34 /* BerTlvUmbrella.h in Headers */,
-				8ADE44A91CE9F3E3006BEC34 /* HexUtil.h in Headers */,
+				49B5358E24ABF6E60041AD71 /* BerHexUtil.h in Headers */,
 				8A858F541CE6156E00A3779C /* BerTlvBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +431,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 8A4BEB42198ED6C500707046;
@@ -490,7 +487,6 @@
 			files = (
 				016C356E21FF4FEE003D5899 /* BerTlv.m in Sources */,
 				016C356F21FF4FEE003D5899 /* BerTag.m in Sources */,
-				016C357021FF4FEE003D5899 /* HexUtil.m in Sources */,
 				016C357121FF4FEE003D5899 /* BerTlvParser.m in Sources */,
 				016C357221FF4FEE003D5899 /* BerTlvs.m in Sources */,
 				016C357321FF4FEE003D5899 /* BerTlvBuilder.m in Sources */,
@@ -504,7 +500,6 @@
 			files = (
 				8A4BEB56198ED6C500707046 /* BerTlv.m in Sources */,
 				B2DF65088487594DBEFC7545 /* BerTag.m in Sources */,
-				B2DF67B7A348986968C70C79 /* HexUtil.m in Sources */,
 				B2DF61176FCB84C2ED25ADD5 /* BerTlvParser.m in Sources */,
 				B2DF65C52F004A588C3D3492 /* BerTlvs.m in Sources */,
 				B2DF6CF3341C45AA3C342B70 /* BerTlvBuilder.m in Sources */,
@@ -532,11 +527,11 @@
 			files = (
 				8A858F551CE6159100A3779C /* BerTlv.m in Sources */,
 				8A858F561CE6159100A3779C /* BerTag.m in Sources */,
-				8A858F571CE6159100A3779C /* HexUtil.m in Sources */,
 				8A858F581CE6159100A3779C /* BerTlvParser.m in Sources */,
 				8A858F591CE6159100A3779C /* BerTlvs.m in Sources */,
 				8A858F5A1CE6159100A3779C /* BerTlvBuilder.m in Sources */,
 				4BE6176F1F56BE9700F9CBD4 /* BerTlvErrors.m in Sources */,
+				49B5358F24ABF6E60041AD71 /* BerHexUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

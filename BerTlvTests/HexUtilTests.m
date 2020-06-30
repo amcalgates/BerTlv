@@ -8,12 +8,12 @@
 
 #import <XCTest/XCTest.h>
 #import "BerTag.h"
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 
-@interface HexUtilTests : XCTestCase
+@interface BerHexUtilTests : XCTestCase
 @end
 
-@implementation HexUtilTests
+@implementation BerHexUtilTests
 
 - (void)testParse {
     [self expected:@"0102030405060708"];
@@ -43,24 +43,24 @@
 }
 
 - (void)expected:(NSString *)aHex {
-    NSData *data = [HexUtil parse:aHex error:nil];
-    NSString *was = [HexUtil format:data];
+    NSData *data = [BerHexUtil parse:aHex error:nil];
+    NSString *was = [BerHexUtil format:data];
     // NSLog(@"%@ -> %@", aHex, was);
 
     XCTAssertTrue([aHex isEqualToString:was], @"Expected %@ but actual %@", aHex, was);
 }
 
 - (void)expected:(NSString *)aExpected hex:(NSString *)aHex {
-    NSData *data = [HexUtil parse:aHex error:nil];
-    NSString *actual = [HexUtil format:data];
+    NSData *data = [BerHexUtil parse:aHex error:nil];
+    NSString *actual = [BerHexUtil format:data];
     // NSLog(@"%@ -> %@", aHex, actual);
 
     XCTAssertTrue([aExpected isEqualToString:actual], @"Expected %@ but actual %@", aExpected, actual);
 }
 
 - (void)prettyExpected:(NSString *)aExpected hex:(NSString *)aHex {
-    NSData *data = [HexUtil parse:aHex error:nil];
-    NSString *actual = [HexUtil prettyFormat:data];
+    NSData *data = [BerHexUtil parse:aHex error:nil];
+    NSString *actual = [BerHexUtil prettyFormat:data];
 
     XCTAssertTrue([aExpected isEqualToString:actual], @"Expected %@ but actual %@", aExpected, actual);
 }
@@ -68,7 +68,7 @@
 - (void)expectErrorInvalidHex:(NSString *)aHex {
     NSError *error;
     XCTAssertNil(error);
-    NSData *result = [HexUtil parse:aHex error:&error];
+    NSData *result = [BerHexUtil parse:aHex error:&error];
     XCTAssertNil(result);
     XCTAssertNotNil(error);
 }

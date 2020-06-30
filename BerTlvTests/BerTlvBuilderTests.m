@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "BerTag.h"
 #import "BerTlvBuilder.h"
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 #import "BerTlv.h"
 #import "BerTlvs.h"
 
@@ -79,7 +79,7 @@
 
 - (void) testInitWithPrimitiveTlv {
 
-    BerTlv *primitiveTlv = [[BerTlv alloc] init:TAG_86 value:[HexUtil parse:@"F9128478E28F860D8424000008514C8F" error:nil]];
+    BerTlv *primitiveTlv = [[BerTlv alloc] init:TAG_86 value:[BerHexUtil parse:@"F9128478E28F860D8424000008514C8F" error:nil]];
 
     BerTlvBuilder *builder = [[BerTlvBuilder alloc] initWithTlv:primitiveTlv];
 
@@ -167,11 +167,11 @@
 
 
 - (void)assertHex:(NSString *)aExpected actual:(NSData *)aData {
-    NSData   *expectedData = [HexUtil parse:aExpected error:nil];
-    NSString *expectedHex = [HexUtil format:expectedData];
+    NSData   *expectedData = [BerHexUtil parse:aExpected error:nil];
+    NSString *expectedHex = [BerHexUtil format:expectedData];
     // NSLog(@"%@ -> %@", aHex, actual);
 
-    NSString *actualHex = [HexUtil format:aData];
+    NSString *actualHex = [BerHexUtil format:aData];
     XCTAssertTrue([expectedHex isEqualToString:actualHex], @"Expected %@ but actual was %@", expectedHex, actualHex);
 }
 

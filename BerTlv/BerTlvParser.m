@@ -5,7 +5,7 @@
 
 #import "BerTlvParser.h"
 #import "BerTlv.h"
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 #import "BerTag.h"
 #import "BerTlvs.h"
 #import "BerTlvErrors.h"
@@ -85,7 +85,7 @@ static int IS_DEBUG_ENABLED = 0; // note, running the testFuzzer unit test with 
     NSString *levelPadding = IS_DEBUG_ENABLED ? [self createLevelPadding:aLevel] : @"";
     if(IS_DEBUG_ENABLED) {
         NSLog(@"%@parseWithResult( level=%d, offset=%d, len=%d, buf=%@)"
-                , levelPadding, aLevel, aOffset, aLen, [HexUtil format:aBuf]
+                , levelPadding, aLevel, aOffset, aLen, [BerHexUtil format:aBuf]
         );
     }
 
@@ -104,7 +104,7 @@ static int IS_DEBUG_ENABLED = 0; // note, running the testFuzzer unit test with 
 
     if(IS_DEBUG_ENABLED) {
         NSLog(@"%@lenBytesCount = %d, len = %d, lenBuf = %@"
-                , levelPadding, lengthBytesCount, valueLength, [HexUtil format:aBuf offset:aOffset + tagBytesCount len:lengthBytesCount]);
+                , levelPadding, lengthBytesCount, valueLength, [BerHexUtil format:aBuf offset:aOffset + tagBytesCount len:lengthBytesCount]);
     }
 
     // VALUE
@@ -145,7 +145,7 @@ static int IS_DEBUG_ENABLED = 0; // note, running the testFuzzer unit test with 
         NSData *value = [aBuf subdataWithRange:range];;
         
         if(IS_DEBUG_ENABLED) {
-            NSLog(@"%@Primitive value = %@", levelPadding, [HexUtil format:value]);
+            NSLog(@"%@Primitive value = %@", levelPadding, [BerHexUtil format:value]);
             NSLog(@"%@Returning primitive offset = %d", levelPadding, resultOffset );
         }
         return [[BerTlv alloc] init:tag value:value];
@@ -175,7 +175,7 @@ static int IS_DEBUG_ENABLED = 0; // note, running the testFuzzer unit test with 
 - (BerTag *) createTag:(NSData *)aBuf offset:(uint)aOffset len:(uint)aLen pad:(NSString *)aLevelPadding {
     BerTag *tag = [[BerTag alloc] init:aBuf offset:aOffset length:aLen];
     if(IS_DEBUG_ENABLED) {
-        NSLog(@"%@Created tag %@ from buffer %@", aLevelPadding, tag, [HexUtil format:aBuf offset:aOffset len:aLen]);
+        NSLog(@"%@Created tag %@ from buffer %@", aLevelPadding, tag, [BerHexUtil format:aBuf offset:aOffset len:aLen]);
     }
     return tag;
 }

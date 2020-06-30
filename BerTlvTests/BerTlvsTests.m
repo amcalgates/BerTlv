@@ -9,7 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "BerTlv.h"
 #import "BerTlvParser.h"
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 #import "BerTag.h"
 #import "BerTlvs.h"
 
@@ -49,7 +49,7 @@
         /*   30 */ @"53 df 7f 03  36 2d 35                               " // S... 6-5
     ;
 
-    NSData *data = [HexUtil parse:hex error:nil];
+    NSData *data = [BerHexUtil parse:hex error:nil];
     BerTlvParser *parser = [[BerTlvParser alloc] init];
     BerTlv *tlv = [parser parseConstructed:data error:nil];
 

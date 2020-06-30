@@ -6,7 +6,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-@interface HexUtil : NSObject
+@interface BerHexUtil : NSObject
 
 + (NSString *) format:(NSData *)aData;
 + (NSString *) prettyFormat:(NSData *)aData;

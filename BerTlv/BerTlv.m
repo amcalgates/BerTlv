@@ -8,7 +8,7 @@
 
 #import "BerTlv.h"
 #import "BerTag.h"
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 #import "BerTlvErrors.h"
 
 @implementation BerTlv
@@ -81,7 +81,7 @@
         NSLog(@"Tag %@ is constructed", tag);
         return nil;
     } else {
-        return [HexUtil format:value];
+        return [BerHexUtil format:value];
     }
 }
 

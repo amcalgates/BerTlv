@@ -8,4 +8,4 @@ FOUNDATION_EXPORT const unsigned char BerTlvVersionString[];
 #import <BerTlv/BerTlvBuilder.h>
 #import <BerTlv/BerTlvParser.h>
 #import <BerTlv/BerTlvs.h>
-#import <BerTlv/HexUtil.h>
+#import <BerTlv/BerHexUtil.h>

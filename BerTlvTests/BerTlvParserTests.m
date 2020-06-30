@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "BerTag.h"
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 #import "BerTlvParser.h"
 #import "BerTlv.h"
 #import "BerTlvs.h"
@@ -93,7 +93,7 @@ NSString * badLengthData = @"DF 01 06 AA BB CC DD EE"; // Truncated data, length
 
 - (void)testParse {
 
-    NSData *data = [HexUtil parse:hex error:nil];
+    NSData *data = [BerHexUtil parse:hex error:nil];
     BerTlvParser *parser = [[BerTlvParser alloc] init];
     BerTlv *tlv = [parser parseConstructed:data error:nil];
     [self assertTag:[BerTag parse:@"e1"] actual:tlv.tag];
@@ -101,7 +101,7 @@ NSString * badLengthData = @"DF 01 06 AA BB CC DD EE"; // Truncated data, length
 
     BerTlv *_0_9f1e = [tlv.list objectAtIndex:0];
     [self assertTag:[BerTag parse:@"9F1E"] actual:_0_9f1e.tag];
-    [self assertHex:@"3136303231343337" actual:[HexUtil format:_0_9f1e.value]];
+    [self assertHex:@"3136303231343337" actual:[BerHexUtil format:_0_9f1e.value]];
 }
 
 - (void)assertTag:(BerTag *)aExpected actual: (BerTag *)aActual {
@@ -109,15 +109,15 @@ NSString * badLengthData = @"DF 01 06 AA BB CC DD EE"; // Truncated data, length
 }
 
 - (void)assertHex:(NSString *)aExpected actual:(NSString *)aHex {
-    NSData *data = [HexUtil parse:aHex error:nil];
-    NSString *actual = [HexUtil format:data];
+    NSData *data = [BerHexUtil parse:aHex error:nil];
+    NSString *actual = [BerHexUtil format:data];
     // NSLog(@"%@ -> %@", aHex, actual);
 
     XCTAssertTrue([aExpected isEqualToString:actual], @"Expected %@ but actual %@", aExpected, actual);
 }
 
 - (void) testParseTlvs {
-    NSData *data = [HexUtil parse:hexPrimitive error:nil];
+    NSData *data = [BerHexUtil parse:hexPrimitive error:nil];
     BerTlvParser *parser = [[BerTlvParser alloc] init];
     BerTlvs *tlvs = [parser parseTlvs:data error:nil];
 
@@ -127,7 +127,7 @@ NSString * badLengthData = @"DF 01 06 AA BB CC DD EE"; // Truncated data, length
 }
 
 - (void)testParsePartial{
-    NSData *data = [HexUtil parse:hexPrimitive error:nil];
+    NSData *data = [BerHexUtil parse:hexPrimitive error:nil];
     BerTlvParser *parser = [[BerTlvParser alloc] init];
 
     BerTlvs *tlvs = [parser parseTlvs:data numberOfTags: 2 error:nil];
@@ -141,7 +141,7 @@ NSString * badLengthData = @"DF 01 06 AA BB CC DD EE"; // Truncated data, length
     //   - [01] 01
     //   - [02] 0202
     NSString *hex = @"3f00 8107 0101 0102 0202 02";
-    NSData *data = [HexUtil parse:hex error:nil];
+    NSData *data = [BerHexUtil parse:hex error:nil];
     BerTlvParser *parser = [[BerTlvParser alloc] init];
     BerTlvs *tlvs = [parser parseTlvs:data error:nil];
     BerTlv *tlv = [tlvs.list objectAtIndex:0];
@@ -150,7 +150,7 @@ NSString * badLengthData = @"DF 01 06 AA BB CC DD EE"; // Truncated data, length
 }
 
 - (void)testBadLengthTlv{
-    NSData *data = [HexUtil parse:badLengthData error:nil];
+    NSData *data = [BerHexUtil parse:badLengthData error:nil];
 
     NSError * parseError =nil;
     BerTlvParser *parser = [[BerTlvParser alloc] init];
@@ -161,7 +161,7 @@ NSString * badLengthData = @"DF 01 06 AA BB CC DD EE"; // Truncated data, length
 }
 
 - (void)testBadLengthTlvWithoutErrorParam{
-    NSData *data = [HexUtil parse:badLengthData error:nil];
+    NSData *data = [BerHexUtil parse:badLengthData error:nil];
     
     BerTlvParser *parser = [[BerTlvParser alloc] init];
     BerTlvs *tlvs = [parser parseTlvs:data error:nil];

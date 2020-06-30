@@ -7,7 +7,7 @@
 #import "BerTlv.h"
 #import "BerTlvs.h"
 #import "BerTag.h"
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 #import "BerTlvParser.h"
 #import "BerTlvErrors.h"
 
@@ -110,7 +110,7 @@
 }
 
 - (BOOL)addHex:(NSString *)aHex tag:(BerTag *)aTag {
-    NSData *buf = [HexUtil parse:aHex error:nil];
+    NSData *buf = [BerHexUtil parse:aHex error:nil];
     return [self addBytes:buf tag:aTag];
 }
 

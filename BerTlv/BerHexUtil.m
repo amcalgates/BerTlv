@@ -3,7 +3,7 @@
 // Copyright (c) 2014 Evgeniy Sinev. All rights reserved.
 //
 
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 #import "BerTlvErrors.h"
 
 static uint8_t HEX_BYTES[] = {
@@ -22,7 +22,7 @@ static uint8_t HEX_BYTES_LEN = 128;
 static uint8_t HEX_BYTE_SKIP = 99;
 
 
-@implementation HexUtil
+@implementation BerHexUtil
 
 + (NSString *)prettyFormat:(NSData *)aData {
     NSMutableString *sb = [[NSMutableString alloc] initWithCapacity:aData.length*2];
@@ -36,7 +36,7 @@ static uint8_t HEX_BYTE_SKIP = 99;
 }
 
 + (NSString *)format:(NSData *)aData {
-    return [HexUtil format:aData offset:0 len:aData.length];
+    return [BerHexUtil format:aData offset:0 len:aData.length];
 }
 
 + (NSData * _Nullable) parse:(NSString *)aHex __deprecated {

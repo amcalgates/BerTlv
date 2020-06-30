@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "BerTag.h"
-#import "HexUtil.h"
+#import "BerHexUtil.h"
 #import "BerTlvParser.h"
 #import "BerTlv.h"
 #import "BerTlvs.h"
@@ -28,13 +28,13 @@
 }
 
 - (void)testNSDataParseStringMiscountReturnsNil {
-    NSData *data = [HexUtil parse:@"fff" error:nil];
+    NSData *data = [BerHexUtil parse:@"fff" error:nil];
     XCTAssertNil(data);
 }
 
 - (void)testCalcDataBadLength {
     BerTlvParser *parser = [[BerTlvParser alloc] init];
-    NSData *testData = [HexUtil parse:@"ff20ffff0000" error:nil];
+    NSData *testData = [BerHexUtil parse:@"ff20ffff0000" error:nil];
     NSError *error;
     [parser parseTlvs:testData error:&error];
     XCTAssertNotNil(error);
@@ -43,14 +43,14 @@
 
 - (void)testOutOfRange {
     BerTlvParser *parser = [[BerTlvParser alloc] init];
-    NSData *testData = [HexUtil parse:@"3f9f5745 c37ede54" error:nil];
+    NSData *testData = [BerHexUtil parse:@"3f9f5745 c37ede54" error:nil];
     NSError *error;
     [parser parseTlvs:testData error:&error];
     XCTAssertNotNil(error);
 }
 
 - (void)testParseTlvsFromGarbageData {
-    NSArray *garbageDatas = @[[HexUtil parse:@"1c1308fd 11212a28" error:nil], [HexUtil parse:@"c8036f54" error:nil], [HexUtil parse:@"1f84f9fe" error:nil]];
+    NSArray *garbageDatas = @[[BerHexUtil parse:@"1c1308fd 11212a28" error:nil], [BerHexUtil parse:@"c8036f54" error:nil], [BerHexUtil parse:@"1f84f9fe" error:nil]];
     
     for (NSData *testData in garbageDatas) {
         BerTlvParser *parser = [[BerTlvParser alloc] init];
